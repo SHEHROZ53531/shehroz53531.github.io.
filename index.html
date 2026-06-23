@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muhammad Shahroz Khalid | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-slate-900 text-slate-100 font-sans antialiased selection:bg-emerald-500 selection:text-slate-900">
+
+    <!-- Header / Navigation -->
+    <header class="sticky top-0 z-50 bg-slate-900/80 backdrop-blur-md border-b border-slate-800">
+        <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="#" class="text-xl font-bold tracking-tight text-emerald-400">SK<span class="text-slate-400">.dev</span></a>
+            <nav class="flex gap-6 text-sm font-medium text-slate-400">
+                <a href="#about" class="hover:text-emerald-400 transition">About</a>
+                <a href="#skills" class="hover:text-emerald-400 transition">Skills</a>
+                <a href="#projects" class="hover:text-emerald-400 transition">Projects</a>
+                <a href="#contact" class="hover:text-emerald-400 transition">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-6 py-12 space-y-24">
+
+        <!-- Hero Section -->
+        <section id="hero" class="py-12 space-y-6">
+            <div class="space-y-2">
+                <p class="text-emerald-400 font-mono tracking-wider text-sm uppercase">Hi, my name is</p>
+                <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-slate-100">Muhammad Shahroz Khalid</h1>
+                <h2 class="text-2xl sm:text-4xl font-bold text-slate-400">Building Smart Systems & Intelligent Applications.</h2>
+            </div>
+            <p class="max-w-2xl text-base sm:text-lg text-slate-400 leading-relaxed">
+                I am a Computer Science undergraduate specializing in **Software Development**, **Mobile Applications**, and **Artificial Intelligence**. Currently building intelligent layers with Agentic AI, LLMs, and Multimodal RAG frameworks.
+            </p>
+            <div class="flex flex-wrap gap-4 pt-2">
+                <a href="#projects" class="px-5 py-2.5 bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-semibold rounded transition text-sm">View My Work</a>
+                <a href="https://github.com/SHEHROZ53531" target="_blank" class="px-5 py-2.5 border border-slate-700 hover:border-emerald-400 text-slate-300 hover:text-emerald-400 font-medium rounded transition text-sm flex items-center gap-2">
+                    <i class="fab fa-github"></i> GitHub Profile
+                </a>
+            </div>
+        </section>
+
+        <hr class="border-slate-800">
+
+        <!-- About Section -->
+        <section id="about" class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <h3 class="text-xl font-bold text-slate-200 tracking-tight uppercase font-mono text-emerald-400">01. About Me</h3>
+            <div class="md:col-span-2 space-y-4 text-slate-400 text-sm sm:text-base leading-relaxed">
+                <p>
+                    Based in Islamabad, Pakistan, I am pursuing my BS in Computer Science at Riphah International University (Expected 2027). I focus on engineering clean backend systems and interactive mobile layouts that run smoothly on real infrastructure.
+                </p>
+                <p>
+                    Whether it's optimizing search algorithms in low-level code, writing cross-platform UIs in Flutter, or engineering complex feature processing pipelines for predictive machine learning models, I love translating algorithmic theory into functional apps.
+                </p>
+            </div>
+        </section>
+
+        <hr class="border-slate-800">
+
+        <!-- Skills Section -->
+        <section id="skills" class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <h3 class="text-xl font-bold text-slate-200 tracking-tight uppercase font-mono text-emerald-400">02. Core Stack</h3>
+            <div class="md:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div class="p-4 rounded-lg bg-slate-800/40 border border-slate-800">
+                    <h4 class="text-emerald-400 font-mono text-xs uppercase tracking-wider mb-3">Languages & Mobile</h4>
+                    <ul class="space-y-1 text-slate-300 text-sm">
+                        <li><i class="fas fa-caret-right text-emerald-500 mr-2"></i>Python & Java</li>
+                        <li><i class="fas fa-caret-right text-emerald-500 mr-2"></i>Dart / Flutter (Cross-Platform)</li>
+                        <li><i class="fas fa-caret-right text-emerald-500 mr-2"></i>C++ & SQL</li>
+                    </ul>
+                </div>
+                <div class="p-4 rounded-lg bg-slate-800/40 border border-slate-800">
+                    <h4 class="text-emerald-400 font-mono text-xs uppercase tracking-wider mb-3">AI & Backend Systems</h4>
+                    <ul class="space-y-1 text-slate-300 text-sm">
+                        <li><i class="fas fa-caret-right text-emerald-500 mr-2"></i>Machine Learning & NLP</li>
+                        <li><i class="fas fa-caret-right text-emerald-500 mr-2"></i>Agentic AI & LLM Systems</li>
+                        <li><i class="fas fa-caret-right text-emerald-500 mr-2"></i>API Dev & JDBC Database Integration</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <hr class="border-slate-800">
+
+        <!-- Projects Section -->
+        <section id="projects" class="space-y-12">
+            <h3 class="text-xl font-bold text-slate-200 tracking-tight uppercase font-mono text-emerald-400">03. Selected Work</h3>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- ChurnIQ -->
+                <div class="p-6 rounded-xl bg-slate-800/30 border border-slate-800 hover:border-slate-700 transition flex flex-col justify-between space-y-4">
+                    <div class="space-y-2">
+                        <div class="flex items-center justify-between">
+                            <h4 class="text-lg font-bold text-slate-100">ChurnIQ: Telco Prediction</h4>
+                            <a href="https://github.com/SHEHROZ53531" target="_blank" class="text-slate-400 hover:text-emerald-400"><i class="fab fa-github text-lg"></i></a>
+                        </div>
+                        <p class="text-sm text-slate-400 leading-relaxed">
+                            End-to-end ML pipeline built using an IBM Watson dataset (7,043 records). Built correlation feature selection matrices and integrated a web dashboard to flag live churn risks. Achieved an ~80% validation accuracy and 0.84 AUC.
+                        </p>
+                    </div>
+                    <div class="flex flex-wrap gap-2 text-xs font-mono text-emerald-400/90">
+                        <span>Python</span><span>Scikit-Learn</span><span>Pandas</span><span>JavaScript</span>
+                    </div>
+                </div>
+
+                <!-- Smart Quiz App -->
+                <div class="p-6 rounded-xl bg-slate-800/30 border border-slate-800 hover:border-slate-700 transition flex flex-col justify-between space-y-4">
+                    <div class="space-y-2">
+                        <div class="flex items-center justify-between">
+                            <h4 class="text-lg font-bold text-slate-100">Smart Quiz Mobile App</h4>
+                            <a href="https://github.com/SHEHROZ53531" target="_blank" class="text-slate-400 hover:text-emerald-400"><i class="fab fa-github text-lg"></i></a>
+                        </div>
+                        <p class="text-sm text-slate-400 leading-relaxed">
+                            A responsive native cross-platform mobile application highlighting dynamic states, smooth quiz flows, live calculations, and decoupled application states.
+                        </p>
+                    </div>
+                    <div class="flex flex-wrap gap-2 text-xs font-mono text-emerald-400/90">
+                        <span>Flutter</span><span>Dart</span><span>UI/UX Design</span>
+                    </div>
+                </div>
+
+                <!-- Algorithmic Plagiarism Detector -->
+                <div class="p-6 rounded-xl bg-slate-800/30 border border-slate-800 hover:border-slate-700 transition flex flex-col justify-between space-y-4">
+                    <div class="space-y-2">
+                        <div class="flex items-center justify-between">
+                            <h4 class="text-lg font-bold text-slate-100">Algorithmic Plagiarism Detector</h4>
+                            <a href="https://github.com/SHEHROZ53531" target="_blank" class="text-slate-400 hover:text-emerald-400"><i class="fab fa-github text-lg"></i></a>
+                        </div>
+                        <p class="text-sm text-slate-400 leading-relaxed">
+                            Optimized string evaluation performance over brute force models. Implemented custom Suffix Array string parsing algorithms, dropping parsing complexity safely down to an efficient $O(n \log n)$ execution cycle.
+                        </p>
+                    </div>
+                    <div class="flex flex-wrap gap-2 text-xs font-mono text-emerald-400/90">
+                        <span>C++</span><span>Python</span><span>Data Structures</span>
+                    </div>
+                </div>
+
+                <!-- Travel & Tourism System -->
+                <div class="p-6 rounded-xl bg-slate-800/30 border border-slate-800 hover:border-slate-700 transition flex flex-col justify-between space-y-4">
+                    <div class="space-y-2">
+                        <div class="flex items-center justify-between">
+                            <h4 class="text-lg font-bold text-slate-100">Travel & Tourism Backend</h4>
+                            <a href="https://github.com/SHEHROZ53531" target="_blank" class="text-slate-400 hover:text-emerald-400"><i class="fab fa-github text-lg"></i></a>
+                        </div>
+                        <p class="text-sm text-slate-400 leading-relaxed">
+                            Desktop logic automation setup connected via JDBC layers. Designed relational schemas to handle concurrent transactions, lookups, and structural multi-table customer booking inputs cleanly.
+                        </p>
+                    </div>
+                    <div class="flex flex-wrap gap-2 text-xs font-mono text-emerald-400/90">
+                        <span>Java Core</span><span>JDBC</span><span>SQL Server</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <hr class="border-slate-800">
+
+        <!-- Contact Section -->
+        <section id="contact" class="text-center py-12 max-w-xl mx-auto space-y-4">
+            <h3 class="text-sm font-mono text-emerald-400 tracking-widest uppercase">04. Connect</h3>
+            <h4 class="text-3xl font-extrabold text-slate-100">Get In Touch</h4>
+            <p class="text-slate-400 text-sm sm:text-base leading-relaxed">
+                I am actively looking for opportunities as a Software Engineer, AI Engineer, or Backend Developer. Drop me an email or let's connect over network profiles.
+            </p>
+            <div class="pt-4 flex justify-center gap-6 text-xl text-slate-400">
+                <a href="mailto:shahrozkhalid397@gmail.com" class="hover:text-emerald-400 transition"><i class="fas fa-envelope"></i></a>
+                <a href="https://linkedin.com/in/shahroz-khalid-919262332" target="_blank" class="hover:text-emerald-400 transition"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/SHEHROZ53531" target="_blank" class="hover:text-emerald-400 transition"><i class="fab fa-github"></i></a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="text-center py-8 border-t border-slate-800/60 text-xs font-mono text-slate-500">
+        &copy; 2026 Muhammad Shahroz Khalid. All rights reserved.
+    </footer>
+
+</body>
+</html>
