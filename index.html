@@ -1,181 +1,385 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Muhammad Shahroz Khalid | Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: radial-gradient(circle at 80% 20%, rgba(99, 102, 241, 0.15) 0%, transparent 40%),
+                        radial-gradient(circle at 20% 80%, rgba(219, 39, 119, 0.12) 0%, transparent 40%),
+                        #0b0c10;
+        }
+        .heading-font { font-family: 'Space Grotesk', sans-serif; }
+        
+        /* Neon Glow Accents */
+        .neon-border-pink { border: 1px solid rgba(219, 39, 119, 0.3); box-shadow: 0 0 15px rgba(219, 39, 119, 0.1); }
+        .neon-border-pink:hover { border-color: rgb(219, 39, 119); box-shadow: 0 0 20px rgba(219, 39, 119, 0.25); }
+        .neon-border-purple { border: 1px solid rgba(139, 92, 246, 0.3); box-shadow: 0 0 15px rgba(139, 92, 246, 0.1); }
+        .neon-border-purple:hover { border-color: rgb(139, 92, 246); box-shadow: 0 0 20px rgba(139, 92, 246, 0.25); }
+        
+        /* Cursor Blink */
+        .cursor-blink::after {
+            content: '|';
+            animation: blink 1s infinite;
+            color: #ec4899;
+        }
+        @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+    </style>
 </head>
-<body class="bg-slate-900 text-slate-100 font-sans antialiased selection:bg-emerald-500 selection:text-slate-900">
+<body class="text-slate-300 min-h-screen relative overflow-x-hidden">
 
-    <!-- Header / Navigation -->
-    <header class="sticky top-0 z-50 bg-slate-900/80 backdrop-blur-md border-b border-slate-800">
-        <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
-            <a href="#" class="text-xl font-bold tracking-tight text-emerald-400">SK<span class="text-slate-400">.dev</span></a>
-            <nav class="flex gap-6 text-sm font-medium text-slate-400">
-                <a href="#about" class="hover:text-emerald-400 transition">About</a>
-                <a href="#skills" class="hover:text-emerald-400 transition">Skills</a>
-                <a href="#projects" class="hover:text-emerald-400 transition">Projects</a>
-                <a href="#contact" class="hover:text-emerald-400 transition">Contact</a>
-            </nav>
+    <!-- Floating Wireframe Globe Element (Bottom Right) -->
+    <div class="fixed bottom-6 right-6 w-32 h-32 md:w-44 md:h-44 opacity-20 pointer-events-none z-0">
+        <svg viewBox="0 0 100 100" class="w-full h-full text-purple-500 animate-[spin_20s_linear_infinite]" fill="none" stroke="currentColor" stroke-width="0.5">
+            <circle cx="50" cy="50" r="45"></circle>
+            <ellipse cx="50" cy="50" rx="45" ry="15"></ellipse>
+            <ellipse cx="50" cy="50" rx="15" ry="45"></ellipse>
+            <path d="M5 50 H95 M50 5 V95"></path>
+        </svg>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="sticky top-0 z-50 bg-[#0b0c10]/80 backdrop-blur-md border-b border-slate-800/50">
+        <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full border border-pink-500 flex items-center justify-center font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-500">MS</div>
+                <span class="font-bold heading-font text-xl text-white tracking-wide">Muhammad Shahroz Shah</span>
+            </div>
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium tracking-wide">
+                <a href="#hero" class="hover:text-pink-500 transition">Home</a>
+                <a href="#about" class="hover:text-pink-500 transition">About</a>
+                <a href="#experience" class="hover:text-pink-500 transition">Experience</a>
+                <a href="#education" class="hover:text-pink-500 transition">Education</a>
+                <a href="#projects" class="hover:text-pink-500 transition">Projects</a>
+                <a href="#skills" class="hover:text-pink-500 transition">Skills</a>
+                <a href="#contact" class="hover:text-pink-500 transition">Contact</a>
+            </div>
         </div>
-    </header>
+    </nav>
 
-    <main class="max-w-5xl mx-auto px-6 py-12 space-y-24">
+    <!-- Main Workspace Container -->
+    <div class="max-w-5xl mx-auto px-6 relative z-10">
 
-        <!-- Hero Section -->
-        <section id="hero" class="py-12 space-y-6">
-            <div class="space-y-2">
-                <p class="text-emerald-400 font-mono tracking-wider text-sm uppercase">Hi, my name is</p>
-                <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-slate-100">Muhammad Shahroz Khalid</h1>
-                <h2 class="text-2xl sm:text-4xl font-bold text-slate-400">Building Smart Systems & Intelligent Applications.</h2>
-            </div>
-            <p class="max-w-2xl text-base sm:text-lg text-slate-400 leading-relaxed">
-                I am a Computer Science undergraduate specializing in **Software Development**, **Mobile Applications**, and **Artificial Intelligence**. Currently building intelligent layers with Agentic AI, LLMs, and Multimodal RAG frameworks.
-            </p>
-            <div class="flex flex-wrap gap-4 pt-2">
-                <a href="#projects" class="px-5 py-2.5 bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-semibold rounded transition text-sm">View My Work</a>
-                <a href="https://github.com/SHEHROZ53531" target="_blank" class="px-5 py-2.5 border border-slate-700 hover:border-emerald-400 text-slate-300 hover:text-emerald-400 font-medium rounded transition text-sm flex items-center gap-2">
-                    <i class="fab fa-github"></i> GitHub Profile
-                </a>
-            </div>
-        </section>
+        <!-- HERO SECTION -->
+        <section id="hero" class="min-h-[calc(100vh-5rem)] flex flex-col justify-center py-12 md:py-20">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+                <div class="md:col-span-7 space-y-6 order-2 md:order-1">
+                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-medium tracking-wider uppercase">
+                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> Available for opportunities
+                    </div>
+                    <div class="space-y-2">
+                        <h1 class="text-4xl sm:text-6xl font-extrabold text-white tracking-tight heading-font">Hi, I'm</h1>
+                        <h2 class="text-4xl sm:text-6xl font-extrabold tracking-tight heading-font text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-purple-400 to-indigo-400 cursor-blink" id="typing-text"></h2>
+                    </div>
+                    <p class="text-slate-400 text-base sm:text-lg max-w-xl leading-relaxed">
+                        A Computer Science student who loves diving into AI, Machine Learning and coding![cite: 1]
+                    </p>
+                    
+                    <!-- Capsule Highlight Tags -->
+                    <div class="flex flex-wrap gap-2.5 pt-2">
+                        <span class="px-3 py-1 bg-slate-900/90 border border-slate-800 text-slate-400 font-mono text-xs rounded-md">AI / ML Engineer</span>
+                        <span class="px-3 py-1 bg-slate-900/90 border border-slate-800 text-slate-400 font-mono text-xs rounded-md">Software Engineer</span>
+                        <span class="px-3 py-1 bg-slate-900/90 border border-slate-800 text-slate-400 font-mono text-xs rounded-md">Backend Developer</span>
+                        <span class="px-3 py-1 bg-slate-900/90 border border-slate-800 text-slate-400 font-mono text-xs rounded-md">Proficient in Python • Java • C++ • Dart</span>
+                    </div>
 
-        <hr class="border-slate-800">
-
-        <!-- About Section -->
-        <section id="about" class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <h3 class="text-xl font-bold text-slate-200 tracking-tight uppercase font-mono text-emerald-400">01. About Me</h3>
-            <div class="md:col-span-2 space-y-4 text-slate-400 text-sm sm:text-base leading-relaxed">
-                <p>
-                    Based in Islamabad, Pakistan, I am pursuing my BS in Computer Science at Riphah International University (Expected 2027). I focus on engineering clean backend systems and interactive mobile layouts that run smoothly on real infrastructure.
-                </p>
-                <p>
-                    Whether it's optimizing search algorithms in low-level code, writing cross-platform UIs in Flutter, or engineering complex feature processing pipelines for predictive machine learning models, I love translating algorithmic theory into functional apps.
-                </p>
-            </div>
-        </section>
-
-        <hr class="border-slate-800">
-
-        <!-- Skills Section -->
-        <section id="skills" class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <h3 class="text-xl font-bold text-slate-200 tracking-tight uppercase font-mono text-emerald-400">02. Core Stack</h3>
-            <div class="md:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-6">
-                <div class="p-4 rounded-lg bg-slate-800/40 border border-slate-800">
-                    <h4 class="text-emerald-400 font-mono text-xs uppercase tracking-wider mb-3">Languages & Mobile</h4>
-                    <ul class="space-y-1 text-slate-300 text-sm">
-                        <li><i class="fas fa-caret-right text-emerald-500 mr-2"></i>Python & Java</li>
-                        <li><i class="fas fa-caret-right text-emerald-500 mr-2"></i>Dart / Flutter (Cross-Platform)</li>
-                        <li><i class="fas fa-caret-right text-emerald-500 mr-2"></i>C++ & SQL</li>
-                    </ul>
+                    <!-- Action Buttons & Quick Social Block -->
+                    <div class="flex items-center gap-4 pt-4">
+                        <a href="#contact" class="px-6 py-3 bg-gradient-to-r from-pink-500 to-purple-600 text-white font-semibold rounded-lg shadow-lg hover:opacity-90 transition text-sm tracking-wide">Contact Me</a>
+                        <a href="#projects" class="px-6 py-3 border border-slate-700 hover:border-pink-500 text-slate-300 hover:text-pink-500 font-medium rounded-lg transition text-sm tracking-wide">View Projects</a>
+                    </div>
+                    <div class="flex items-center gap-5 pt-2 text-xl text-slate-500">
+                        <a href="https://github.com/SHEHROZ53531" target="_blank" class="hover:text-pink-500 transition"><i class="fab fa-github"></i></a>
+                        <a href="https://linkedin.com/in/shahroz-khalid-919262332" target="_blank" class="hover:text-pink-500 transition"><i class="fab fa-linkedin"></i></a>
+                        <a href="mailto:shahrozkhalid397@gmail.com" class="hover:text-pink-500 transition"><i class="fas fa-envelope"></i></a>
+                    </div>
                 </div>
-                <div class="p-4 rounded-lg bg-slate-800/40 border border-slate-800">
-                    <h4 class="text-emerald-400 font-mono text-xs uppercase tracking-wider mb-3">AI & Backend Systems</h4>
-                    <ul class="space-y-1 text-slate-300 text-sm">
-                        <li><i class="fas fa-caret-right text-emerald-500 mr-2"></i>Machine Learning & NLP</li>
-                        <li><i class="fas fa-caret-right text-emerald-500 mr-2"></i>Agentic AI & LLM Systems</li>
-                        <li><i class="fas fa-caret-right text-emerald-500 mr-2"></i>API Dev & JDBC Database Integration</li>
-                    </ul>
+                <!-- Profile Image Frame -->
+                <div class="md:col-span-5 flex justify-center order-1 md:order-2">
+                    <div class="w-64 h-64 sm:w-80 sm:h-80 rounded-full border-2 border-dashed border-purple-500/40 p-3 relative">
+                        <div class="w-full h-full rounded-full overflow-hidden bg-slate-800 border-2 border-pink-500">
+                            <!-- Placeholder image matching layout box, replace src with your photo -->
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?fit=crop&w=500&h=500&q=80" alt="Profile Photograph" class="w-full h-full object-cover grayscale contrast-125">
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <hr class="border-slate-800">
+        <!-- ABOUT ME SECTION -->
+        <section id="about" class="py-20 space-y-10 border-t border-slate-900">
+            <div class="text-center space-y-2">
+                <p class="text-xs font-mono text-pink-500 uppercase tracking-widest">Who I Am</p>
+                <h3 class="text-3xl md:text-4xl font-extrabold text-white heading-font tracking-tight">About Me</h3>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center max-w-4xl mx-auto">
+                <div class="md:col-span-4 flex justify-center">
+                    <div class="w-48 h-48 rounded-full overflow-hidden border border-purple-500/50 bg-slate-900 shadow-xl">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?fit=crop&w=400&h=400&q=80" alt="About Portrait" class="w-full h-full object-cover grayscale">
+                    </div>
+                </div>
+                <div class="md:col-span-8 space-y-4 text-slate-400 text-sm sm:text-base leading-relaxed">
+                    <p>
+                        I'm a Computer Science undergraduate with a strong academic foundation and a drive to build technology that solves real-world problems at scale[cite: 1]. Proficient in Python, Java, C++, and Dart, I've led academic projects that sharpened my skills in algorithms, systems design, and database architecture[cite: 1].
+                    </p>
+                    <p>
+                        My current focus is on Machine Learning and Artificial Intelligence, and I'm actively exploring these fields through internships, coursework, and hands-on projects[cite: 1]. I'm particularly drawn to how Big Tech companies leverage AI to power global innovation, and I aim to be part of that journey[cite: 1].
+                    </p>
+                    <div class="pt-2">
+                        <button class="inline-flex items-center gap-2 px-5 py-2.5 bg-purple-600 hover:bg-purple-700 text-white text-sm font-semibold rounded-md transition tracking-wide shadow-md">
+                            <i class="fas fa-download"></i> Grab My Resume
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-        <!-- Projects Section -->
-        <section id="projects" class="space-y-12">
-            <h3 class="text-xl font-bold text-slate-200 tracking-tight uppercase font-mono text-emerald-400">03. Selected Work</h3>
+        <!-- EXPERIENCE SECTION -->
+        <section id="experience" class="py-20 space-y-10 border-t border-slate-900">
+            <div class="text-center space-y-2">
+                <p class="text-xs font-mono text-pink-500 uppercase tracking-widest">My Journey</p>
+                <h3 class="text-3xl md:text-4xl font-extrabold text-white heading-font tracking-tight">Experience</h3>
+            </div>
+            <div class="max-w-3xl mx-auto space-y-6">
+                <!-- Card 1 -->
+                <div class="p-6 rounded-xl bg-slate-950/60 neon-border-pink transition duration-300">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
+                        <div>
+                            <h4 class="text-lg font-bold text-white heading-font">Machine Learning Intern</h4>
+                            <p class="text-sm text-pink-400 font-medium">CodeAlpha</p>
+                        </div>
+                        <span class="px-3 py-1 rounded-full bg-slate-900 text-xs text-slate-500 border border-slate-800 font-mono">Jan 2026 - Apr 2026</span>
+                    </div>
+                    <p class="text-sm text-slate-400 leading-relaxed">
+                        Completed major tasks in Machine Learning including model training using advanced AI and ML algorithms. Demonstrated proficiency in executing complex data tasks.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- EDUCATION SECTION -->
+        <section id="education" class="py-20 space-y-10 border-t border-slate-900">
+            <div class="text-center space-y-2">
+                <p class="text-xs font-mono text-pink-500 uppercase tracking-widest">Academic Path</p>
+                <h3 class="text-3xl md:text-4xl font-extrabold text-white heading-font tracking-tight">Education</h3>
+            </div>
+            <div class="max-w-3xl mx-auto space-y-6">
+                <div class="p-6 rounded-xl bg-slate-950/60 border border-slate-800/80 relative overflow-hidden group hover:border-purple-500/40 transition">
+                    <div class="absolute top-0 right-0 px-3 py-1 bg-purple-500/10 border-b border-l border-purple-500/30 text-xs font-mono text-purple-400 rounded-bl-lg">
+                        CGPA: 3.48[cite: 1]
+                    </div>
+                    <div class="space-y-3">
+                        <div class="w-10 h-10 rounded-lg bg-purple-500/10 flex items-center justify-center text-purple-400"><i class="fas fa-graduation-cap"></i></div>
+                        <div>
+                            <h4 class="text-lg font-bold text-white heading-font">BS Computer Science</h4>
+                            <p class="text-sm text-slate-400">Riphah International University, Islamabad[cite: 1]</p>
+                            <p class="text-xs text-slate-500 font-mono mt-1">2023 - Expected Spring 2027[cite: 1]</p>
+                        </div>
+                        <p class="text-xs text-slate-400 leading-relaxed pt-2 border-t border-slate-900">
+                            <span class="font-semibold text-slate-300 font-mono">Key Courses:</span> Artificial Intelligence, Cloud Computing, Parallel and Distributed Computing, Computer Networks, Data Structures, Analysis of Algorithms, OOP, Database Systems, System Analysis & Design, Software Engineering, COAL[cite: 1].
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJECTS SECTION -->
+        <section id="projects" class="py-20 space-y-10 border-t border-slate-900">
+            <div class="text-center space-y-2">
+                <p class="text-xs font-mono text-pink-500 uppercase tracking-widest">What I've Built</p>
+                <h3 class="text-3xl md:text-4xl font-extrabold text-white heading-font tracking-tight">Projects</h3>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+                
+                <!-- Project 1: ChurnIQ -->
+                <div class="p-6 rounded-xl bg-slate-950/40 neon-border-purple transition duration-300 flex flex-col justify-between space-y-4">
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between">
+                            <h4 class="text-lg font-bold text-white heading-font">ChurnIQ: Telco Churn Prediction</h4>
+                            <span class="text-xs px-2 py-0.5 rounded bg-purple-500/10 border border-purple-500/20 text-purple-400 uppercase font-mono tracking-wider font-semibold">Featured</span>
+                        </div>
+                        <p class="text-xs text-slate-400 leading-relaxed">
+                            Built an end-to-end ML pipeline using IBM Watson Telco dataset (7,043 records) for churn prediction[cite: 1]. Performed correlation-based feature selection down to 26 key parameters, hitting ~80% accuracy and 0.84 AUC[cite: 1]. Includes real-time JavaScript risk flagging dashboards[cite: 1].
+                        </p>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="flex flex-wrap gap-1.5 text-[10px] font-mono text-pink-400">
+                            <span class="px-2 py-0.5 rounded bg-slate-900">Python</span><span class="px-2 py-0.5 rounded bg-slate-900">Scikit-Learn</span><span class="px-2 py-0.5 rounded bg-slate-900">Pandas</span><span class="px-2 py-0.5 rounded bg-slate-900">JavaScript</span>
+                        </div>
+                        <a href="https://github.com/SHEHROZ53531" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-medium text-slate-400 hover:text-pink-500 transition pt-1"><i class="fab fa-github"></i> View on GitHub</a>
+                    </div>
+                </div>
+
+                <!-- Project 2: Smart Quiz -->
+                <div class="p-6 rounded-xl bg-slate-950/40 neon-border-purple transition duration-300 flex flex-col justify-between space-y-4">
+                    <div class="space-y-3">
+                        <h4 class="text-lg font-bold text-white heading-font">Smart Quiz Mobile Application</h4>
+                        <p class="text-xs text-slate-400 leading-relaxed">
+                            Developed a cross-platform mobile quiz application with responsive UI animations and decoupled local evaluation metrics for instant calculations and multi-device support[cite: 1].
+                        </p>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="flex flex-wrap gap-1.5 text-[10px] font-mono text-pink-400">
+                            <span class="px-2 py-0.5 rounded bg-slate-900">Flutter</span><span class="px-2 py-0.5 rounded bg-slate-900">Dart</span><span class="px-2 py-0.5 rounded bg-slate-900">UI/UX Design</span>
+                        </div>
+                        <a href="https://github.com/SHEHROZ53531" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-medium text-slate-400 hover:text-pink-500 transition pt-1"><i class="fab fa-github"></i> View on GitHub</a>
+                    </div>
+                </div>
+
+                <!-- Project 3: Plagiarism Detection -->
+                <div class="p-6 rounded-xl bg-slate-950/40 neon-border-purple transition duration-300 flex flex-col justify-between space-y-4">
+                    <div class="space-y-3">
+                        <h4 class="text-lg font-bold text-white heading-font">Plagiarism Detection System</h4>
+                        <p class="text-xs text-slate-400 leading-relaxed">
+                            Implemented custom string parsing algorithms utilizing the Suffix Array strategy. Successfully optimized computational space execution, bringing standard brute-force processing down to an efficient $O(n \log n)$ run cycle.
+                        </p>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="flex flex-wrap gap-1.5 text-[10px] font-mono text-pink-400">
+                            <span class="px-2 py-0.5 rounded bg-slate-900">C++</span><span class="px-2 py-0.5 rounded bg-slate-900">Python</span><span class="px-2 py-0.5 rounded bg-slate-900">Algorithms</span>
+                        </div>
+                        <a href="https://github.com/SHEHROZ53531" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-medium text-slate-400 hover:text-pink-500 transition pt-1"><i class="fab fa-github"></i> View on GitHub</a>
+                    </div>
+                </div>
+
+                <!-- Project 4: Travel Management -->
+                <div class="p-6 rounded-xl bg-slate-950/40 neon-border-purple transition duration-300 flex flex-col justify-between space-y-4">
+                    <div class="space-y-3">
+                        <h4 class="text-lg font-bold text-white heading-font">Travel & Tourism Backend</h4>
+                        <p class="text-xs text-slate-400 leading-relaxed">
+                            Developed a desktop application integrating relational models[cite: 1]. Automated complex backend reservation schemes and customer booking queries through structured optimization layers[cite: 1].
+                        </p>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="flex flex-wrap gap-1.5 text-[10px] font-mono text-pink-400">
+                            <span class="px-2 py-0.5 rounded bg-slate-900">Java</span><span class="px-2 py-0.5 rounded bg-slate-900">JDBC</span><span class="px-2 py-0.5 rounded bg-slate-900">SQL Server</span>
+                        </div>
+                        <a href="https://github.com/SHEHROZ53531" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-medium text-slate-400 hover:text-pink-500 transition pt-1"><i class="fab fa-github"></i> View on GitHub</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SKILLS SLIDER/GRID SECTION -->
+        <section id="skills" class="py-20 space-y-10 border-t border-slate-900">
+            <div class="text-center space-y-2">
+                <p class="text-xs font-mono text-pink-500 uppercase tracking-widest">My Toolkit</p>
+                <h3 class="text-3xl md:text-4xl font-extrabold text-white heading-font tracking-tight">Skills</h3>
+            </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <!-- ChurnIQ -->
-                <div class="p-6 rounded-xl bg-slate-800/30 border border-slate-800 hover:border-slate-700 transition flex flex-col justify-between space-y-4">
-                    <div class="space-y-2">
-                        <div class="flex items-center justify-between">
-                            <h4 class="text-lg font-bold text-slate-100">ChurnIQ: Telco Prediction</h4>
-                            <a href="https://github.com/SHEHROZ53531" target="_blank" class="text-slate-400 hover:text-emerald-400"><i class="fab fa-github text-lg"></i></a>
-                        </div>
-                        <p class="text-sm text-slate-400 leading-relaxed">
-                            End-to-end ML pipeline built using an IBM Watson dataset (7,043 records). Built correlation feature selection matrices and integrated a web dashboard to flag live churn risks. Achieved an ~80% validation accuracy and 0.84 AUC.
-                        </p>
-                    </div>
-                    <div class="flex flex-wrap gap-2 text-xs font-mono text-emerald-400/90">
-                        <span>Python</span><span>Scikit-Learn</span><span>Pandas</span><span>JavaScript</span>
+            <div class="max-w-3xl mx-auto space-y-8">
+                <!-- Row 1: Concepts -->
+                <div class="space-y-3">
+                    <h4 class="text-sm font-semibold tracking-wider uppercase text-purple-400 font-mono text-center md:text-left">Concepts & Framework Core</h4>
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                        <div class="p-3 rounded-lg bg-slate-950 border border-slate-900 text-center text-xs font-medium hover:border-pink-500/30 transition">Artificial Intelligence[cite: 1]</div>
+                        <div class="p-3 rounded-lg bg-slate-950 border border-slate-900 text-center text-xs font-medium hover:border-pink-500/30 transition">Machine Learning[cite: 1]</div>
+                        <div class="p-3 rounded-lg bg-slate-950 border border-slate-900 text-center text-xs font-medium hover:border-pink-500/30 transition">Deep Learning</div>
+                        <div class="p-3 rounded-lg bg-slate-950 border border-slate-900 text-center text-xs font-medium hover:border-pink-500/30 transition">Agentic AI</div>
                     </div>
                 </div>
 
-                <!-- Smart Quiz App -->
-                <div class="p-6 rounded-xl bg-slate-800/30 border border-slate-800 hover:border-slate-700 transition flex flex-col justify-between space-y-4">
-                    <div class="space-y-2">
-                        <div class="flex items-center justify-between">
-                            <h4 class="text-lg font-bold text-slate-100">Smart Quiz Mobile App</h4>
-                            <a href="https://github.com/SHEHROZ53531" target="_blank" class="text-slate-400 hover:text-emerald-400"><i class="fab fa-github text-lg"></i></a>
-                        </div>
-                        <p class="text-sm text-slate-400 leading-relaxed">
-                            A responsive native cross-platform mobile application highlighting dynamic states, smooth quiz flows, live calculations, and decoupled application states.
-                        </p>
-                    </div>
-                    <div class="flex flex-wrap gap-2 text-xs font-mono text-emerald-400/90">
-                        <span>Flutter</span><span>Dart</span><span>UI/UX Design</span>
-                    </div>
-                </div>
-
-                <!-- Algorithmic Plagiarism Detector -->
-                <div class="p-6 rounded-xl bg-slate-800/30 border border-slate-800 hover:border-slate-700 transition flex flex-col justify-between space-y-4">
-                    <div class="space-y-2">
-                        <div class="flex items-center justify-between">
-                            <h4 class="text-lg font-bold text-slate-100">Algorithmic Plagiarism Detector</h4>
-                            <a href="https://github.com/SHEHROZ53531" target="_blank" class="text-slate-400 hover:text-emerald-400"><i class="fab fa-github text-lg"></i></a>
-                        </div>
-                        <p class="text-sm text-slate-400 leading-relaxed">
-                            Optimized string evaluation performance over brute force models. Implemented custom Suffix Array string parsing algorithms, dropping parsing complexity safely down to an efficient $O(n \log n)$ execution cycle.
-                        </p>
-                    </div>
-                    <div class="flex flex-wrap gap-2 text-xs font-mono text-emerald-400/90">
-                        <span>C++</span><span>Python</span><span>Data Structures</span>
-                    </div>
-                </div>
-
-                <!-- Travel & Tourism System -->
-                <div class="p-6 rounded-xl bg-slate-800/30 border border-slate-800 hover:border-slate-700 transition flex flex-col justify-between space-y-4">
-                    <div class="space-y-2">
-                        <div class="flex items-center justify-between">
-                            <h4 class="text-lg font-bold text-slate-100">Travel & Tourism Backend</h4>
-                            <a href="https://github.com/SHEHROZ53531" target="_blank" class="text-slate-400 hover:text-emerald-400"><i class="fab fa-github text-lg"></i></a>
-                        </div>
-                        <p class="text-sm text-slate-400 leading-relaxed">
-                            Desktop logic automation setup connected via JDBC layers. Designed relational schemas to handle concurrent transactions, lookups, and structural multi-table customer booking inputs cleanly.
-                        </p>
-                    </div>
-                    <div class="flex flex-wrap gap-2 text-xs font-mono text-emerald-400/90">
-                        <span>Java Core</span><span>JDBC</span><span>SQL Server</span>
+                <!-- Row 2: Tech & Languages -->
+                <div class="space-y-3">
+                    <h4 class="text-sm font-semibold tracking-wider uppercase text-pink-400 font-mono text-center md:text-left">Languages & Tools</h4>
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                        <div class="p-3 rounded-lg bg-slate-950 border border-slate-900 text-center text-xs font-medium hover:border-purple-500/30 transition"><i class="fab fa-python text-yellow-500 mr-1.5"></i> Python[cite: 1]</div>
+                        <div class="p-3 rounded-lg bg-slate-950 border border-slate-900 text-center text-xs font-medium hover:border-purple-500/30 transition"><i class="fab fa-java text-red-400 mr-1.5"></i> Java[cite: 1]</div>
+                        <div class="p-3 rounded-lg bg-slate-950 border border-slate-900 text-center text-xs font-medium hover:border-purple-500/30 transition">C++[cite: 1]</div>
+                        <div class="p-3 rounded-lg bg-slate-950 border border-slate-900 text-center text-xs font-medium hover:border-purple-500/30 transition"><i class="fas fa-database text-blue-400 mr-1.5"></i> SQL[cite: 1]</div>
+                        <div class="p-3 rounded-lg bg-slate-950 border border-slate-900 text-center text-xs font-medium hover:border-purple-500/30 transition">Dart[cite: 1]</div>
+                        <div class="p-3 rounded-lg bg-slate-950 border border-slate-900 text-center text-xs font-medium hover:border-purple-500/30 transition">Flutter[cite: 1]</div>
+                        <div class="p-3 rounded-lg bg-slate-950 border border-slate-900 text-center text-xs font-medium hover:border-purple-500/30 transition">TensorFlow</div>
+                        <div class="p-3 rounded-lg bg-slate-950 border border-slate-900 text-center text-xs font-medium hover:border-purple-500/30 transition"><i class="fab fa-git-alt text-orange-500 mr-1.5"></i> Git[cite: 1]</div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <hr class="border-slate-800">
+        <!-- CONTACT SECTION -->
+        <section id="contact" class="py-20 space-y-10 border-t border-slate-900">
+            <div class="text-center space-y-2">
+                <p class="text-xs font-mono text-pink-500 uppercase tracking-widest">Get In Touch</p>
+                <h3 class="text-3xl md:text-4xl font-extrabold text-white heading-font tracking-tight">Let's Chat!</h3>
+                <p class="text-slate-400 text-xs sm:text-sm max-w-md mx-auto">Feel free to reach me. I'm always open to new ideas and opportunities!</p>
+            </div>
 
-        <!-- Contact Section -->
-        <section id="contact" class="text-center py-12 max-w-xl mx-auto space-y-4">
-            <h3 class="text-sm font-mono text-emerald-400 tracking-widest uppercase">04. Connect</h3>
-            <h4 class="text-3xl font-extrabold text-slate-100">Get In Touch</h4>
-            <p class="text-slate-400 text-sm sm:text-base leading-relaxed">
-                I am actively looking for opportunities as a Software Engineer, AI Engineer, or Backend Developer. Drop me an email or let's connect over network profiles.
-            </p>
-            <div class="pt-4 flex justify-center gap-6 text-xl text-slate-400">
-                <a href="mailto:shahrozkhalid397@gmail.com" class="hover:text-emerald-400 transition"><i class="fas fa-envelope"></i></a>
-                <a href="https://linkedin.com/in/shahroz-khalid-919262332" target="_blank" class="hover:text-emerald-400 transition"><i class="fab fa-linkedin"></i></a>
-                <a href="https://github.com/SHEHROZ53531" target="_blank" class="hover:text-emerald-400 transition"><i class="fab fa-github"></i></a>
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 max-w-4xl mx-auto items-start">
+                <!-- Info block -->
+                <div class="md:col-span-5 space-y-4 p-6 rounded-xl bg-slate-950/60 border border-slate-900">
+                    <h4 class="text-base font-bold text-white heading-font mb-2">Reach me at</h4>
+                    <div class="space-y-3 text-xs sm:text-sm">
+                        <a href="https://github.com/SHEHROZ53531" target="_blank" class="flex items-center gap-3 text-slate-400 hover:text-pink-500 transition">
+                            <i class="fab fa-github text-purple-400 w-4"></i> github.com/SHEHROZ53531[cite: 1]
+                        </a>
+                        <a href="https://linkedin.com/in/shahroz-khalid-919262332" target="_blank" class="flex items-center gap-3 text-slate-400 hover:text-pink-500 transition">
+                            <i class="fab fa-linkedin text-purple-400 w-4"></i> linkedin.com/in/shahroz-khalid...[cite: 1]
+                        </a>
+                        <a href="mailto:shahrozkhalid397@gmail.com" class="flex items-center gap-3 text-slate-400 hover:text-pink-500 transition">
+                            <i class="fas fa-envelope text-purple-400 w-4"></i> shahrozkhalid397@gmail.com[cite: 1]
+                        </a>
+                    </div>
+                    <div class="pt-2 border-t border-slate-900 flex items-center gap-2 text-xs text-emerald-400 font-mono">
+                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span> Open to Collaborations
+                    </div>
+                </div>
+
+                <!-- Interactive Form Mockup matching screen frames exactly -->
+                <div class="md:col-span-7 p-6 rounded-xl bg-slate-950/60 border border-slate-900 space-y-4">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="space-y-1.5">
+                            <label class="text-xs font-mono text-slate-400">Your Name</label>
+                            <input type="text" placeholder="Shahroz Khalid" class="w-full px-4 py-2.5 rounded-lg bg-slate-900 border border-slate-800 focus:outline-none focus:border-pink-500 text-xs text-white">
+                        </div>
+                        <div class="space-y-1.5">
+                            <label class="text-xs font-mono text-slate-400">Email Address</label>
+                            <input type="email" placeholder="you@example.com" class="w-full px-4 py-2.5 rounded-lg bg-slate-900 border border-slate-800 focus:outline-none focus:border-pink-500 text-xs text-white">
+                        </div>
+                    </div>
+                    <div class="space-y-1.5">
+                        <label class="text-xs font-mono text-slate-400">Message</label>
+                        <textarea rows="4" placeholder="What's on your mind?" class="w-full px-4 py-2.5 rounded-lg bg-slate-900 border border-slate-800 focus:outline-none focus:border-pink-500 text-xs text-white resize-none"></textarea>
+                    </div>
+                    <button class="w-full py-3 rounded-lg bg-gradient-to-r from-pink-500 to-purple-600 font-bold heading-font text-white text-xs tracking-wider uppercase shadow-md hover:opacity-95 transition flex items-center justify-center gap-2">
+                        Send Message <i class="fas fa-paper-plane text-[10px]"></i>
+                    </button>
+                </div>
             </div>
         </section>
 
-    </main>
+    </div>
 
-    <footer class="text-center py-8 border-t border-slate-800/60 text-xs font-mono text-slate-500">
-        &copy; 2026 Muhammad Shahroz Khalid. All rights reserved.
+    <!-- Page Footer -->
+    <footer class="text-center py-8 border-t border-slate-900 text-[10px] font-mono text-slate-600 relative z-10">
+        &copy; 2026 Muhammad Shahroz Khalid. Engineered with custom utility classes.
     </footer>
 
+    <!-- Text Typing Simulation Logic script -->
+    <script>
+        const words = ["Shahroz Khalid.", "an AI/ML Developer.", "a Software Engineer."];
+        let i = 0, timer, txt = document.getElementById("typing-text");
+        
+        function type() {
+            let word = words[i], j = 0;
+            timer = setInterval(() => {
+                if (j < word.length) txt.textContent += word.charAt(j++);
+                else { clearInterval(timer); setTimeout(erase, 2000); }
+            }, 100);
+        }
+        function erase() {
+            timer = setInterval(() => {
+                if (txt.textContent.length > 0) txt.textContent = txt.textContent.slice(0, -1);
+                else { clearInterval(timer); i = (i + 1) % words.length; setTimeout(type, 500); }
+            }, 50);
+        }
+        document.addEventListener("DOMContentLoaded", type);
+    </script>
 </body>
 </html>
